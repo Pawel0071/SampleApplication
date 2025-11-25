@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
-namespace SampleApplication.View
 
+namespace SampleApplication.View
 {
     public partial class TextView : UserControl
     {

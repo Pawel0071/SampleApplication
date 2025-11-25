@@ -7,17 +7,6 @@ namespace SampleApplication.Model.Helper
 {
     public static class ConditionTypeHelper
     {
-        public static ICheckStrategy GetStrategy(this ConditionType type)
-        {
-            return type.TypeID switch
-            {
-                1 => new EqualStrategy(),
-                2 => new BeginsWithStrategy(),
-                3 => new EndOnStrategy(),
-                4 => new ContainsStrategy()
-            };
-        }
-
         public static ObservableCollection<ConditionType> Init(this ObservableCollection<ConditionType> colection)
         {
             return new ObservableCollection<ConditionType>()

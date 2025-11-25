@@ -5,7 +5,7 @@ using System.Collections.ObjectModel;
 
 namespace SampleApplication.ViewModel
 {
-    public class ConditionTypeListViewModel : ViewModelBase
+    public class ConditionTypeListViewModel
     {
         private ObservableCollection<ConditionType> conditions;
 

@@ -1,5 +1,6 @@
-﻿<Application x:Class="SampleApplication.App"
+﻿<prism:PrismApplication x:Class="SampleApplication.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:prism="http://prismlibrary.com/"
              xmlns:local="clr-namespace:SampleApplication">
-</Application>
+</prism:PrismApplication>

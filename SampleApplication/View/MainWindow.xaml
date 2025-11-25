@@ -4,14 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SampleApplication" 
-        xmlns:view="clr-namespace:SampleApplication.View"
-        xmlns:viewmodel="clr-namespace:SampleApplication.ViewModel"    
+        xmlns:prism="http://prismlibrary.com/"
         mc:Ignorable="d"
         Title="Sample Application" Height="350" Width="800">
-    <Window.Resources>
-        <viewmodel:TextViewModel x:Key="tvm"></viewmodel:TextViewModel>
-    </Window.Resources>
-    <Grid ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
-        <view:TextView Margin="10,10,10,10"/>
-    </Grid>
+    <ContentControl prism:RegionManager.RegionName="MainRegion"
+                    HorizontalContentAlignment="Stretch"
+                    VerticalContentAlignment="Stretch"
+                    Margin="10" />
 </Window>

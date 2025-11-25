@@ -1,18 +1,10 @@
-﻿using SampleApplication.Commands;
-using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Windows.Input;
 
 namespace SampleApplication.ViewModel
 {
     public class ViewModelBase : INotifyPropertyChanged
     {
-        public ViewModelBase() 
-        {
-            CloseAppCommand = new BaseCommand(CloseApp);
-        }
-
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
@@ -20,11 +12,12 @@ namespace SampleApplication.ViewModel
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public ICommand CloseAppCommand { get; }
-
-        private void CloseApp(object value)
+        protected bool SetProperty<T>(ref T field, T value, [CallerMemberName] string propertyName = null)
         {
-            Environment.Exit(0);
+            if (Equals(field, value)) return false;
+            field = value;
+            OnPropertyChanged(propertyName);
+            return true;
         }
     }
 }
